@@ -61,10 +61,11 @@
 	}
 
 	// 3. Insert to users table
-	$host = "localhost";
-	$db_user = "root";
-	$db_pass = "";
+	$host = "database-1.c5ygzrzquoch.us-east-2.rds.amazonaws.com";
+	$db_user = "admin";
+	$db_pass = "mitsad2020";
 	$db_name = "sad";
+	//$db_port = "3306";
 	// Connect to database
 	$connection = mysqli_connect($host, $db_user, $db_pass, $db_name);
 	// Validate connection
