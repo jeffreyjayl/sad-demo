@@ -12,22 +12,13 @@
 	// 2. Validation post request
 	if (empty($fname)) {
 		$flag = true;
-		echo json_encode(
-			[
-				"message" => "First name is required.",
-				"error" => "0001"
-			]
+		echo json_encode(["message" => "First name is required.","error" => "0001"]
 		);
 	}
 
 	if (empty($lname)) {
 		$flag = true;
-		echo json_encode(
-			[
-				"message" => "Last name is required.",
-				"error" => "0002"
-			]
-		);
+		echo json_encode(["message" => "Last name is required.","error" => "0002"]);
 	}
 
 	if (empty($email)) {
@@ -43,20 +34,13 @@
 	if (empty($password)) {
 		$flag = true;
 		echo json_encode(
-			[
-				"message" => "Password is required.",
-				"error" => "0004"
-			]
+			["message" => "Password is required.","error" => "0004"]
 		);
 	}
 
 	if ($password != $re_password) {
 		$flag = true;
-		echo json_encode(
-			[
-				"message" => "Password do not match.",
-				"error" => "0005"
-			]
+		echo json_encode(["message" => "Password do not match.","error" => "0005"]
 		);
 	}
 
@@ -71,12 +55,7 @@
 	// Validate connection
 	if (mysqli_connect_errno()) {
 		$flag = true;
-		echo json_encode(
-			[
-				"message" => "Could not connect to database.",
-				"error" => "0006"
-			]
-		);
+		echo json_encode(["message" => "Could not connect to database.","error" => "0006"]);
 	}
 
 	// Create INSERT SQL
@@ -110,12 +89,7 @@
 		echo json_encode($result_arr);
 	} else {
 		// else fail insert
-		echo json_encode(
-			[
-				"message" => "Insert user failed.",
-				"error" => "0007"
-			]
-		);
+		echo json_encode(["message" => "Insert user failed.","error" => "0007"]);
 	}
 
 	mysqli_close($connection);
